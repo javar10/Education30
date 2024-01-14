@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="add your own description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education30</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Education30</h1>
+        <h5>Inspired by <a href="https://javascript30.com/" target="_blank">#JavaScript30</a></h5>
+       <!-- <button class="themeButton">Change theme</button> -->
+    </header>
+
+    <main>
+        <div class="project-container">
+            <div class="project-item">
+                <div class="card">
+                    <div class="image-box">
+                        <img src="./images/LetterSoundsImg.png" alt="edit alt" class="card-img-top" width="100%" height="100%">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Letter Sounds</h3>
+                        <p class="card-text"><a href="./01 - Letter Sounds/" target="_blank">Demo</a> | <a
+                                href="https://github.com/javar10/Education30/tree/main/01%20-%20Letter%20Sounds"
+                                target="_blank">Repo</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="project-item">
+                <div class="card">
+                    <div class="image-box">
+                        <img src="./images/pexels-vie-studio-4439444.jpg" alt="edit alt" class="card-img-top" width="100%" height="100%"> 
+                        <!-- image from: https://www.pexels.com/photo/coming-soon-on-white-surface-4439444/-->
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Coming Soon</h3>
+                        <p class="card-text"><a href="" target="_blank">Demo</a> | <a
+                                href=""
+                                target="_blank">Repo</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="project-item">
+                <div class="card">
+                    <div class="image-box">
+                        <img src="./images/pexels-vie-studio-4439444.jpg" alt="edit alt" class="card-img-top" width="100%" height="100%"> 
+                        <!-- image from: https://www.pexels.com/photo/coming-soon-on-white-surface-4439444/-->
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Coming Soon</h3>
+                        <p class="card-text"><a href="" target="_blank">Demo</a> | <a
+                                href=""
+                                target="_blank">Repo</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="project-item">
+                <div class="card">
+                    <div class="image-box">
+                        <img src="./images/pexels-vie-studio-4439444.jpg" alt="edit alt" class="card-img-top" width="100%" height="100%"> 
+                        <!-- image from: https://www.pexels.com/photo/coming-soon-on-white-surface-4439444/-->
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Coming Soon</h3>
+                        <p class="card-text"><a href="" target="_blank">Demo</a> | <a
+                                href=""
+                                target="_blank">Repo</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="project-item">
+                <div class="card">
+                    <div class="image-box">
+                        <img src="./images/pexels-vie-studio-4439444.jpg" alt="edit alt" class="card-img-top" width="100%" height="100%"> 
+                        <!-- image from: https://www.pexels.com/photo/coming-soon-on-white-surface-4439444/-->
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Coming Soon</h3>
+                        <p class="card-text"><a href="" target="_blank">Demo</a> | <a
+                                href=""
+                                target="_blank">Repo</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="project-item">
+                <div class="card">
+                    <div class="image-box">
+                        <img src="./images/pexels-vie-studio-4439444.jpg" alt="edit alt" class="card-img-top" width="100%" height="100%"> 
+                        <!-- image from: https://www.pexels.com/photo/coming-soon-on-white-surface-4439444/-->
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Coming Soon</h3>
+                        <p class="card-text"><a href="" target="_blank">Demo</a> | <a
+                                href=""
+                                target="_blank">Repo</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        Made by Jessica Vargas | <a href="" target="_blank">Link 1</a> | <a href="" target="_blank">Link 2</a> | <a href=""
+            target="_blank">Link 3</a>
+    </footer>
+
+    <script>
+        function changeTheme() {
+            let body = document.querySelector("body");
+
+            if (body.classList.contains("dark")) {
+                body.classList.remove("dark");
+            } else {
+                body.classList.add("dark");
+            }
+        }
+
+        let themeButton = document.querySelector(".themeButton");
+        themeButton.addEventListener("click", changeTheme);
+    </script>
+
+</body>
+
+</html>
