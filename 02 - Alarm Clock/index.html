@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Alarm Clock</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="content">
+    <div class="planning">
+      <div class="add-info">
+        <form action="" class="add-info-form" id="add-info-form">
+          <label for="task">Enter New Event</label>
+          <input id="task" name="task" type="text">
+          <br>
+          <label for="alarm">Enter Alarm Time</label>
+          <input id="alarm" name="alarm" type="time">
+          <br>
+          <button id="submit-btn" type="submit">Enter Event</button>
+        </form>
+      </div>
+      <div class="schedule-div" id="schedule">
+        <table id="table">
+          <thead id="thead">
+            <th>Schedule</th>
+            <th>Time</th>
+            <th id="alarm-column">Set Alarm</th>
+            <th id="delete-column">Delete</th>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+      <div class="reset-div" id="reset-div">
+        <button id="reset" type="button">Delete Schedule</button>
+      </div>
+    </div>
+    <div class="clock">
+      <div class="clock-numbers">
+        <p class="deg0 clock-num">12</p>
+        <p class="deg30 clock-num">1</p>
+        <p class="deg60 clock-num">2</p>
+        <p class="deg90 clock-num">3</p>
+        <p class="deg120 clock-num">4</p>
+        <p class="deg150 clock-num">5</p>
+        <p class="deg180 clock-num">6</p>
+        <p class="deg210 clock-num">7</p>
+        <p class="deg240 clock-num">8</p>
+        <p class="deg270 clock-num">9</p>
+        <p class="deg300 clock-num">10</p>
+        <p class="deg330 clock-num">11</p>
+      </div>
+      <div class="clock-face">
+        <div class="hand hour-hand"></div>
+        <div class="hand min-hand"></div>
+        <div class="hand second-hand"></div>
+      </div>
+      <div class="timer" id="timer">
+        <div id="slice"></div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="audio" src="alarm.wav"></audio>
+  <!-- sound from: https://www.zedge.net/ringtone/2717fe34-36f9-4710-9c67-38fdd0b4f0b2-->
+  <script src="script.js"></script>
+
+</body>
+
+</html>

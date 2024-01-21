@@ -1,0 +1,247 @@
+:root {
+    --base-color: #53371D;
+    --base-transparent: #53371Dcc;
+    --border-color: teal;
+    --border-shadow: rgba(0, 128, 128, 0.721);
+    --accent-color: rgb(254, 208, 254);
+    --text-color: white;
+}
+
+html {
+    background: url('./pexels-element-digital-1370296.jpg');
+    /* Photo by Element5 Digital: https://www.pexels.com/photo/selective-focus-photography-of-bookshelf-with-books-1370296/ */
+    background-size: cover;
+    font-family: 'helvetica neue';
+    text-align: center;
+    font-size: 10px;
+}
+
+body {
+    margin: 0;
+    font-size: 2rem;
+    display: flex;
+    flex: 1;
+    min-height: 100vh;
+    align-items: center;
+    color: var(--text-color);
+}
+
+button {
+    color: var(--text-color);
+    background-color: var(--base-color);
+    padding: .5rem;
+    border-radius: 1rem;
+    font-size: 15px;
+    border-color: var(--border-color);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+table,
+th,
+tr,
+td {
+    border: 1px solid var(--border-color);
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 1rem 2rem;
+}
+
+td:nth-child(3):hover,
+td:last-child:hover {
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
+}
+
+.clock {
+    width: 30rem;
+    height: 30rem;
+    border: 20px solid var(--border-color);
+    border-radius: 50%;
+    margin: 50px auto;
+    padding: 2rem;
+    margin: 2rem;
+    box-shadow:
+        0 0 0 4px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 3px rgba(0, 128, 128, 0.721),
+        inset 0 0 10px black,
+        0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: var(--base-transparent);
+    z-index: 1;
+}
+
+.clock-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-3px);
+    /* account for the height of the clock hands */
+}
+
+.clock-numbers {
+    width: 30rem;
+    height: 30rem;
+    position: absolute;
+    font-size: 2rem;
+    z-index: 2;
+}
+
+.clock-num {
+    position: absolute;
+    font-family: 'Lobster', sans-serif;
+}
+
+.deg0 {
+    /* 12 oclock */
+    transform: translateX(13.5rem) translateY(-2.5rem)
+}
+
+.deg30 {
+    /* 1 oclock */
+    transform: translateX(22rem) translateY(-.5rem);
+
+}
+
+.deg60 {
+    /* 2 oclock */
+    transform: translateX(27rem) translateY(5rem);
+}
+
+.deg90 {
+    /* 3 oclock */
+    transform: translateX(29rem) translateY(12rem);
+}
+
+.deg120 {
+    /* 4 oclock */
+    transform: translateX(27rem) translateY(19rem);
+}
+
+.deg150 {
+    /* 5 oclock */
+    transform: translateX(22rem) translateY(24.5rem);
+}
+
+.deg180 {
+    /* 6 oclock */
+    transform: translateX(14.5rem) translateY(26.5rem);
+}
+
+.deg210 {
+    /* 7 oclock */
+    transform: translateX(7rem) translateY(24.5rem);
+}
+
+.deg240 {
+    /* 8 oclock */
+    transform: translateX(2rem) translateY(19rem);
+}
+
+.deg270 {
+    /* 9 oclock */
+    transform: translateX(0rem) translateY(12rem);
+}
+
+.deg300 {
+    /* 10 oclock */
+    transform: translateX(2rem) translateY(5rem);
+}
+
+.deg330 {
+    /* 11 oclock */
+    transform: translateX(7rem) translateY(-.5rem);
+}
+
+
+.hand {
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    transform-origin: right;
+    transform: rotate(90deg);
+    border-radius: 2rem 0 0 2rem;
+    z-index: 4;
+}
+
+.hour-hand {
+    height: 10px;
+    background: var(--text-color);
+    width: 35%;
+    left: 15%;
+    z-index: 6;
+}
+
+.min-hand {
+    height: 6px;
+    background: teal;
+}
+
+.second-hand {
+    height: 2px;
+    background: var(--text-color);
+}
+
+.planning {
+    flex: 1 0 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+    text-align: start;
+    align-items: start;
+    padding: 2rem;
+}
+
+.add-info,
+.schedule-div,
+.reset-div {
+    margin-top: 2rem;
+}
+
+.add-info {
+    background-color: var(--base-transparent);
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+}
+
+.schedule-div {
+    background-color: var(--base-transparent);
+    border: 2px solid var(--border-color);
+}
+
+.timer {
+    --stop: 0;
+    --start: 0;
+    --pt1: 0;
+    --pt2: 0;
+    --pt3: 0;
+    --pt4: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#slice {
+    background-color: var(--accent-color);
+    position: absolute;
+    width: 30rem;
+    height: 30rem;
+    transform: translateY(-15rem);
+    clip-path: polygon(50% 50%, var(--start), var(--pt1), var(--pt2), var(--pt3), var(--pt4), var(--stop));
+    border-radius: 50%;
+    z-index: -1;
+}
