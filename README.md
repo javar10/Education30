@@ -2,7 +2,6 @@
 This repository was created during the 2024 Women Who Code Days of Code Challenge. During this challenge I chose to work on my web development skills, beginning with the [JavaScript30](https://javascript30.com) challenge from Wes Bos. Rather than posting his solutions ([#JavaScript30 Repo](https://github.com/wesbos/JavaScript30)), I have adapted the challenges to create resources for educators. Follow the links below to explore my projects.
 
 ## [Portfolio](https://javar10.github.io/Education30/)
-<sub>Thanks to @Kat for providing the [repo](https://github.com/katmohd/JavaScript30/blob/main/portfoliotemplate.html) for this portfolio template.</sub>
 
 <ol>
   <li><a href="https://javar10.github.io/Education30/01%20-%20Letter%20Sounds/">Letter Sounds</a></li>
