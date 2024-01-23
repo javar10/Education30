@@ -140,7 +140,6 @@ function setAlarm() {
     let minutes;
     let alarmHour;
     let hours;
-    let hourAlert;
     rows.forEach((row, index) => {
         row.childNodes[2].addEventListener('click', () => {
             rows.forEach(line => {
@@ -157,7 +156,6 @@ function setAlarm() {
             let alarmTime = scheduleArray.splice(rowIndex, 1)[0].alarm;
             alarmHour = Number(alarmTime.slice(0, 2));
             alarmMin = Number(alarmTime.slice(-2));
-            hourAlert = 0;
             setInterval(() => {
                 let date = new Date();
                 hours = date.getHours();
@@ -165,10 +163,6 @@ function setAlarm() {
                 if (checkHour(alarmHour, hours, alarmMin, minutes)) {
                     timerDiv.style.display = 'flex';
                 } else {
-                    if (hourAlert == 0){
-                        hourAlert += 1;
-                        alert(`Timer will start when event time is less than one hour away.`);
-                    }
                     timerDiv.style.display = 'none';
                 }
                 changeAngle(alarmMin, minutes); 
