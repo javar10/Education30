@@ -16,7 +16,7 @@ let hue = 0;
 let direction = true;
 
 function draw(e) {
-    if (!isDrawing) return; // stop the fn from running when they are not moused down
+    if (!isDrawing) return; 
     ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
     ctx.beginPath();
 
@@ -37,19 +37,10 @@ canvas.addEventListener('mousedown', (e) => {
     isDrawing = true;
     [lastX, lastY] = [e.offsetX, e.offsetY];
 });
-canvas.addEventListener('touchstart', (e) => {
-    isDrawing = true;
-    [lastX, lastY] = [e.offsetX, e.offsetY];
-});
 
 canvas.addEventListener('mousemove', draw);
-canvas.addEventListener('touchmove', draw);
-
 canvas.addEventListener('mouseup', () => isDrawing = false);
-canvas.addEventListener('touchend', () => isDrawing = false);
-
 canvas.addEventListener('mouseout', () => isDrawing = false);
-canvas.addEventListener('touchcancel', () => isDrawing = false);
 
 // Set Letter
 const letterTxt = document.querySelector('#letter');
@@ -72,5 +63,3 @@ redoBtn.addEventListener('click', () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
 
-// TODO: add touch events https://stackoverflow.com/questions/51333798/how-can-i-make-mousedown-mouseup-trigger-on-mobile-devices
-// touch events: https://developer.mozilla.org/en-US/docs/Web/API/Touch_events/Using_Touch_Events
