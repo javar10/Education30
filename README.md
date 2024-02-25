@@ -16,8 +16,6 @@ This repository was created during the 2024 Women Who Code Days of Code Challeng
   <li><a>Coming Soon</a></li>
   <li><a>Coming Soon</a></li>
   <li><a href="https://javar10.github.io/Education30/12%20-%20Guess%20My%20Number/">Guess My Number</a></li>
-  <li><a>Coming Soon</a></li>
-  <li><a>Coming Soon</a></li>
 
 </ol>
     
