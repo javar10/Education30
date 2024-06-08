@@ -1,0 +1,56 @@
+@font-face {
+    font-family: dash;
+    src: url(quicksand_dash.otf);
+}
+
+@font-face {
+    font-family: book;
+    src: url(quicksand_book.otf);
+}
+
+html,
+body {
+    margin: 0;
+}
+
+div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.text {
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    font-family: dash;
+    font-size: 85vh;
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    position: absolute;
+    width: 9rem;
+    bottom: -100vh;
+    margin: 2rem;
+    font-family: book;
+    font-size: medium;
+    border-radius: .5rem;
+    border-color: black;
+    background-color: whitesmoke;
+}
+
+#new {
+    position: absolute;
+    right: -100vw;
+    background-color: #9ec2fc;
+}

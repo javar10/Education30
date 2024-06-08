@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Countdown Timer</title>
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<body>
+  <div class="timer">
+    <div class="timer__controls">
+      <button data-time="7" class="timer__button">1 minute</button>
+      <button data-time="120" class="timer__button">2 minutes</button>
+      <button data-time="300" class="timer__button">5 minutes</button>
+      <button data-time="600" class="timer__button">10 minutes</button>
+      <button data-time="1200" class="timer__button">20 minutes</button>
+      <form name="customForm" id="custom">
+        <input type="text" name="minutes" placeholder="Enter Minutes">
+      </form>
+    </div>
+    <div class="display">
+      <h1 class="display__time-left"></h1>
+      <p class="display__end-time"></p>
+      <div class="display__timer-control-btns">
+        <button type="button" class="display__btn" id="display__stop-timer-btn">Stop Timer</button>
+        <button type="button" class="display__btn" id="display__continue-timer-btn">Continue</button>
+        <button type="button" class="display__btn" id="display__restart-timer-btn">Restart</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

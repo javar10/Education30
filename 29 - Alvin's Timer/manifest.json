@@ -1,0 +1,17 @@
+{
+    "name": "Alvin's Timer",
+    "version": "1.0.0",
+    "description": "repeated interval timer",
+    "manifest_version": 3,
+    "author": "Jessica Vargas",
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "Alvin's Timer"
+    },
+    "permissions": [
+      "storage",
+      "activeTab",
+      "scripting"
+    ]
+    
+}

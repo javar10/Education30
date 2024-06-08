@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dictionary</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <form class="search-form">
+    <input type="number" class="length" min="1" max="15" placeholder="Word Length">
+    <input type="text" class="search" placeholder="Enter Text Here">
+    <ul class="suggestions">
+      <li>Type a letter</li>
+      <li>or part of a word</li>
+    </ul>
+  </form>
+<script>
+//const endpoint = 'https://gist.githubusercontent.com/BideoWego/60fbd40d5d1f0f1beca11ba95221dd38/raw/58fb4cce910fbf5fa67a2f0f1f619c09d7b1b373/dictionary.json';
+const endpoint = 'https://raw.githubusercontent.com/ssvivian/WebstersDictionary/master/dictionary.json';
+
+let words = [];
+fetch(endpoint)
+  .then(blob => blob.json())
+  .then(data => words = data);
+
+const justWords = [];
+function removeDups(array) {
+  array.forEach(dictEntry => {
+    const entry = dictEntry.word;
+    if (!justWords.includes(entry)) {
+      justWords.push(entry);
+    } 
+  });
+  return justWords;
+}
+
+//removeDups(words);
+
+function findMatches(wordToMatch, array) {
+  return array.filter(dictEntry => {
+    // here we need to figure out if the city or state matches what was searched
+    const regex = new RegExp(wordToMatch, 'gi');
+    return dictEntry.match(regex)
+  });
+}
+
+function getWordLength() {
+  if (wordLength.value == '' || wordLength.value <=0 || wordLength.value > 15) {
+    alert('Enter a number 1-15');
+  } else {
+    return Number(wordLength.value);
+  }
+}
+
+//TODO: create a get input function to display the alert when there's not input.
+// then use that function to create a variable in displayMatches() that can be reused
+
+function findWordLengthMatches(array) {
+  const wordLen = getWordLength();
+  return array.filter(dictEntry => {
+    return dictEntry.length == wordLen;
+  });
+}
+
+/* function removeDuplicates(words) {
+  return words.filter((dictEntry, index) => {
+    return words.indexOf(dictEntry === index);
+  });
+} */
+
+function displayMatches() {
+  if (searchInput.value == '' || wordLength.value == '') {
+    alert(`Enter both word length and word parts`);
+  } else {
+   // removeDups(words);
+    const wordLenArray = findWordLengthMatches(words);
+    console.log(`wordLenArray${wordLenArray}`);
+    const noDupsArray = removeDups(wordLenArray);
+    console.log(`noDupsArray:${noDupsArray}`);
+    const matchArray = findMatches(searchInput.value, noDupsArray);
+
+    console.log(`matchArray: ${matchArray}`);
+
+    const html = matchArray.map(dictEntry => {
+      const regex = new RegExp(searchInput.value, 'gi');
+      const word = dictEntry
+        .toLowerCase()
+        .replace(regex, `<span class="hl">${searchInput.value}</span>`);
+      return `
+        <li>
+          <span class="name">${word}</span>
+        </li>
+      `;
+    }).join('');
+    suggestions.innerHTML = html;
+  }
+}
+
+const searchInput = document.querySelector('.search');
+const suggestions = document.querySelector('.suggestions');
+const wordLength = document.querySelector('.length');
+
+searchInput.addEventListener('change', displayMatches);
+searchInput.addEventListener('keyup', displayMatches);
+wordLength.addEventListener('change', displayMatches);
+wordLength.addEventListener('keyup', displayMatches);
+
+</script>
+  </body>
+</html>
